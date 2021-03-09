@@ -1,0 +1,51 @@
+def leftRotation(l, d):
+    z=0
+    arr=[]
+    for i in range(0, d):
+        x=l.pop(z)
+        print("x is", end=" ")
+        print(x)
+        arr.append(x)
+    print(arr)
+    for j in arr:
+        l.append(j)
+        
+    return l
+        
+    
+
+if __name__=="__main__":
+    print("Enter the array inputs")
+    l=list(map(int, input().strip().split()))
+    print("Enter the value of d")
+    d=int(input())
+    print(leftRotation(l, d))
+    
+    
+#takes theta(n) time complexity
+#takes theta(d) space
+
+def reverse(l, start, end):
+    while start< end:
+        l[start], l[end]= l[end], l[start]
+        start +=1
+        end -=1
+    return l
+
+def leftRotation(l, d):
+    l=reverse(l, 0, d-1)
+    l=reverse(l, d, len(l)-1)
+    l=reverse(l, 0, len(l)-1)
+    
+    return l
+
+if __name__=="__main__":
+    print("Enter the array inputs")
+    l=list(map(int, input().strip().split()))
+    print("Enter the value of d")
+    d=int(input())
+    print(leftRotation(l, d))
+    
+    
+#takes theta(2n) time complexity
+#takes theta(1) space 
