@@ -12,7 +12,9 @@ class Solution:
         # code here
         if W==0 or n==0:
             return 0
-            
+        
+        elif table[n][W]!=-1:
+            return self.table[n][W]            
         elif wt[n-1]<=W:
             self.table[n][W]=max(val[n-1]+self.knapSack((W-wt[n-1]), wt, val, n-1),
             self.knapSack(W, wt, val, n-1))
