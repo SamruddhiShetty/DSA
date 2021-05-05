@@ -1,6 +1,6 @@
 #return the max stops which can be provided to the trains where their (arrival time, departure time, platform_no) is given
 #we have to find the number of trains which can be allowed on each platform
-#this method is similar to activity_search problem
+#this method is similar to activity_selection problem
 from collections import defaultdict
 import sys
 
