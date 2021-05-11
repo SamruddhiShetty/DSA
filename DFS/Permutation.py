@@ -2,6 +2,8 @@
 #eg: given array- [1, 2, 3]
 #ans- [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 
+#this works only for array with distinct elements
+
 def permute(self, nums: List[int]) -> List[List[int]]:
         
         dummy=[]
