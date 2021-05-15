@@ -1,5 +1,5 @@
 #refer problem from https://leetcode.com/problems/permutation-sequence/
-
+#have written the algorithm in the BOOK refer that
 import math
 class Solution:
     def __init__(self):
