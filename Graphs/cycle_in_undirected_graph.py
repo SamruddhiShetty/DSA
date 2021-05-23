@@ -20,3 +20,6 @@ class Solution:
 		    if visited[i]==False:
 		        if self.cyclicUnit(i, visited, adj, -1):
 		            return True
+
+#time complexity is V+E
+#space complexity is V (visited array)
