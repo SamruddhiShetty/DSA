@@ -42,3 +42,6 @@ if __name__=="__main__":
             print(1)
         else:
             print(0)
+
+ #time complexity is V+E
+#space complexity is V (visited array)
