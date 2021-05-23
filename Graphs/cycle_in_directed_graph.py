@@ -9,7 +9,7 @@ class Solution:
             if visited[j]==False:
                 if self.CyclicUnit(j, visited, recStack, adj)==True:
                     return True
-            if recStack[j]==True:  #if the vertex is already visited check whether it is present in the recursion stack only then we can predict the cyclicity
+            elif recStack[j]==True:  #if the vertex is already visited check whether it is present in the recursion stack only then we can predict the cyclicity
                 return True
             
         recStack[v]=False    #after completing the dfs travel and reaching the end of that subtree we remove all the elements from recStack by setting it False
