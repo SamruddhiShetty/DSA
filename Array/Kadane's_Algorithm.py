@@ -7,17 +7,19 @@ class Solution:
     #Function to find the sum of contiguous subarray with maximum sum.
     def maxSubArraySum(self,a,size):
         ##Your code here
-        Sums=[]
-        Sums.append(a[0])
+        Sums=a[0]
+        currentSum=a[0]
         
         #here every element of the Sums array will have the max sum of the contigious
         #subarray so far that is at each element we choose max(only current element
         #or current_element + maxSum so far)
         for i in a[1:]:
-            Sums.append(max(i, Sums[-1]+i))
+            currentSum=max(i, currentSum+i)
+            Sums=max(Sums, currentSum)
             
-        return max(Sums)
+        return Sums
+            
       
       
  #time- theta(N)
- #space - theta(N)
+ #space - O(1)
