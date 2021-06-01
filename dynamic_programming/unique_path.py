@@ -1,6 +1,6 @@
 #refer problem from https://leetcode.com/problems/unique-paths/submissions/
 
-#normaly when the movement is restricted to two directions and without obstacles its DP else its backtracking
+#normaly when the movement is restricted to two directions its DP else its backtracking
 
 def uniquePaths(self, m: int, n: int) -> int:
         dp = [[1] * n for _ in range(m)]
