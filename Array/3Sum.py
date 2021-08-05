@@ -5,7 +5,11 @@ class Solution:
             return []
         result=[]
         nums.sort()
-        for i in range(len(nums)-1, -1, -1):
+        i=len(nums)-1
+        
+        while i>=0:
+            if i<len(nums)-1 and nums[i]==nums[i+1]: #avoiding duplicates
+                i-=1
             start, end=0, i-1
             while start<end:
                 Sum=nums[i]+nums[start]+nums[end]
@@ -14,9 +18,11 @@ class Solution:
                     if ([nums[i], nums[start], nums[end]] not in result):
                         result.append([nums[i], nums[start], nums[end]])
                     start+=1
+                    while start<end and nums[start]==nums[start-1]:  #avoiding duplicates i.e avoiding the situation of going through same set of no.s again and again
+                        start+=1
                 elif Sum>0:
                     end -=1
                 else:
                     start +=1
-                    
+            i-=1
         return result
