@@ -29,3 +29,30 @@ class Solution:
     def rotateby90(self,a, n): 
         self.transpose(a,n) 
         self.reverseColumns(a,n) 
+        
+        
+    #OR u can do this its the same logic a little easy to understand
+    class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        
+        #here we conduct the transpose in_place
+        #at every iteration we start from diagonal element to avoid running over
+        #the elements which is swapped already
+        N=len(matrix[0])
+        for i in range(0, N):
+            for j in range(i, N):
+                matrix[i][j], matrix[j][i]=matrix[j][i], matrix[i][j]
+                
+        i=0
+        j=N-1
+        while i<j:
+            for k in range(0, N):
+                matrix[k][i], matrix[k][j]=matrix[k][j], matrix[k][i]
+                
+            i+=1
+            j-=1
+            
+        return
